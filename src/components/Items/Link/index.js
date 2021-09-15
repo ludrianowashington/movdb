@@ -1,18 +1,39 @@
-import Link from 'next/link'
+import { useRouter } from 'next/router';
+import Badge from '../Badge';
+
 // Styling the component
 import styled from 'styled-components';
 
-
 const StyledLink = styled.a`
   width: 100%;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  font-size: 16px;
+  font-family: sans-serif;
+  color: ${({theme})=> theme.colors.textLight};
   
-  padding: 10px 15px;
+  text-decoration: none;
 `
 
-export default function StyledLink({href, name}) {
+// Function Main
+export default function Link({children, href, value}) {
+  const router = useRouter();
+
   return(
-    <Link href={href} passHref>
-      <StyledLink>{name}</StyledLink>
-    </Link>
+    <StyledLink
+      href="#"
+      onClick={(e)=>{
+        e.preventDefault()
+
+        router.push(href)
+      }}
+    >
+      {children}
+      <Badge>{value}</Badge>
+    </StyledLink>
   )
 }

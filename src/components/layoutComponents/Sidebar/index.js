@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import Link from "../../Items/Link";
+
 // Styling component
 const Container = styled.div`
   width: 25rem;
@@ -18,10 +20,10 @@ const SideContainer = styled.ul`
 
   border-radius: 10px;
 
-  background-color: ${({theme}) => theme.colors.background};
+  /* background-color: ${({theme}) => theme.colors.background}; */
 
 `
-const ItemListHead = styled.div`
+const HeadList = styled.div`
   width: 100%;
 
   display: flex;
@@ -35,11 +37,20 @@ const ItemListHead = styled.div`
   background-color: ${({theme}) => theme.colors.secondary};
 `
 
-const ItemList = styled.li`
+const Item = styled.li`
+  height: 3.5rem;
+
   display: flex;
   justify-content: center;
   
-  padding: 10px 15px;
+  padding: 5px 30px;
+
+  transition: ease-in-out .3s;
+  &:hover {
+    cursor: pointer;
+
+    background-color: ${({theme}) => theme.colors.hover};
+  }
 `
 
 
@@ -55,12 +66,24 @@ export default function SideBar() {
     <>
       <Container>
         <SideContainer>
-          <ItemListHead>
+          <HeadList>
             <Text>Resultado da busca</Text>
-          </ItemListHead>
-          <ItemList>
-            
-          </ItemList>
+          </HeadList>
+          <Item>
+            <Link href='#' value={12}>
+              Filmes
+            </Link>
+          </Item>
+          <Item>
+            <Link href='#' value={112}>
+              Series
+            </Link>
+          </Item>
+          <Item>
+            <Link href='#' value={2}>
+              Tv
+            </Link>
+          </Item>
         </SideContainer>
       </Container>
     </>
