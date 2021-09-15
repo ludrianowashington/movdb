@@ -15,7 +15,7 @@
   },
   "license": "MIT",
   "keywords": [],
-  "description": "",
+  "description": "Website de pesquisa de filmes e series",
   "devDependencies": {
     "babel-plugin-styled-components": "^1.13.2"
   }
