@@ -1,5 +1,5 @@
 {
-  "name": "movdb-alternate",
+  "name": "movdb",
   "version": "1.0.0",
   "scripts": {
     "dev": "next",
