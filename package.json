@@ -1,5 +1,5 @@
 {
-  "name": "movdb",
+  "name": "movdb-alternate",
   "version": "1.0.0",
   "scripts": {
     "dev": "next",
@@ -15,7 +15,7 @@
   },
   "license": "MIT",
   "keywords": [],
-  "description": "Website de pesquisa de filmes e series",
+  "description": "",
   "devDependencies": {
     "babel-plugin-styled-components": "^1.13.2"
   }
