@@ -1,7 +1,7 @@
-import {createGlobalStyle, ThemeProvider} from 'styled-components';
+import { createGlobalStyle, ThemeProvider } from "styled-components";
 
 // Importing component
-import Layout from '../components/layout'
+import Layout from "../components/layout";
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -9,27 +9,28 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
   }
-`
+`;
 
 const theme = {
   colors: {
-    primary: '#0d253f',
-    secondary: '#01b4e4',
-    terciary: '#90cea1', 
-    background: '#a3a5a3',
-    textDark: '#828282', 
-    textLight: '#2d2e23', 
-    hover: '#e9e9e9'
+    primary: "#0d253f",
+    secondary: "#01b4e4",
+    terciary: "#90cea1",
+    background: "#a3a5a3",
+    textDark: "#828282",
+    textLight: "#2d2e23",
+    hover: "#e9e9e9",
+    line: "#4a4a2a"
   }
-}
+};
 
-export default function App({Component, pageProps}) {
+export default function App({ Component, pageProps }) {
   return (
     <>
-      <GlobalStyle/>
+      <GlobalStyle />
       <ThemeProvider theme={theme}>
         <Layout>
-          <Component {...pageProps}/>
+          <Component {...pageProps} />
         </Layout>
       </ThemeProvider>
     </>

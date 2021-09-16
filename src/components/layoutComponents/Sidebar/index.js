@@ -10,19 +10,19 @@ const Container = styled.div`
   padding: 2.2%;
   
   /* background-color: ${({ theme }) => theme.colors.background}; */
-`
+`;
 const SideContainer = styled.ul`
   width: 100%;
   height: 20rem;
 
   margin-top: 3rem;
-  margin-left: .7rem;
+  margin-left: 0.7rem;
 
   border-radius: 10px;
+  border: solid 1px #b4b8b4;
 
-  /* background-color: ${({theme}) => theme.colors.background}; */
-
-`
+  /*background-color: ${({ theme }) => theme.colors.background}; */
+`;
 const HeadList = styled.div`
   width: 100%;
 
@@ -31,38 +31,39 @@ const HeadList = styled.div`
 
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  
+
   padding: 19px 15px;
 
-  background-color: ${({theme}) => theme.colors.secondary};
-`
+  background-color: ${({ theme }) => theme.colors.secondary};
+`;
 
 const Item = styled.li`
-  height: 3.5rem;
+  height: 3rem;
 
   display: flex;
   justify-content: center;
-  
+
   padding: 5px 30px;
 
-  transition: ease-in-out .3s;
+  border-bottom: 1px solid #b4b8b4;
+
+  transition: ease-in-out 0.3s;
   &:hover {
     cursor: pointer;
 
-    background-color: ${({theme}) => theme.colors.hover};
+    background-color: ${({ theme }) => theme.colors.hover};
   }
-`
-
+`;
 
 const Text = styled.span`
   font-family: sans-serif;
   font-size: 22px;
-  color: ${({theme}) => theme.colors.textLight}
-`
+  color: ${({ theme }) => theme.colors.textLight};
+`;
 
 // Function Main
 export default function SideBar() {
-  return(
+  return (
     <>
       <Container>
         <SideContainer>
@@ -70,22 +71,22 @@ export default function SideBar() {
             <Text>Resultado da busca</Text>
           </HeadList>
           <Item>
-            <Link href='#' value={12}>
+            <Link href="#" value={12}>
               Filmes
             </Link>
           </Item>
           <Item>
-            <Link href='#' value={112}>
+            <Link href="#" value={112}>
               Series
             </Link>
           </Item>
           <Item>
-            <Link href='#' value={2}>
+            <Link href="#" value={2}>
               Tv
             </Link>
           </Item>
         </SideContainer>
       </Container>
     </>
-  )
+  );
 }
