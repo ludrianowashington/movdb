@@ -16,21 +16,10 @@ const Lists = styled.ul`
   background-color: ${({ theme }) => theme.colors.terciary};
 `;
 
-const ListItem = styled.li``;
-
-export default function Home({ lists }) {
+export default function Home() {
   return (
     <Container>
-      <Lists>
-        {/*lists.map((list) => (
-          <ListItem>{list.title}</ListItem>
-        ))*/}
-      </Lists>
+      <Lists></Lists>
     </Container>
   );
-}
-
-export async function getStaticProps() {
-  const res = await fetch();
-  return;
 }
