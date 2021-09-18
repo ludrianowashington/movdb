@@ -1,7 +1,11 @@
+import { useState } from 'react';
+
 import Image from 'next/image'
 import api from "../services/api";
 
 import styled from "styled-components";
+
+import { getFormattedDate } from '../utils/formatDate';
 
 const Container = styled.div`
   width: 100%;
@@ -16,6 +20,8 @@ const Lists = styled.ul`
 `;
 
 const ItemList = styled.li`
+  max-width: 95%;
+
   margin: 20px;
 
   text-decoration: none;
@@ -37,6 +43,14 @@ const SectionLeft = styled.div`
 
 const SectionRight = styled.div`
   width: 90%;
+
+  padding: 15px 20px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  text-align: left;
 `;
 
 const ImgPoster = styled(Image)`
@@ -44,7 +58,41 @@ const ImgPoster = styled(Image)`
   border-top-left-radius: 5px;
 `;
 
+const Title = styled.h2`
+
+  color: ${({theme}) => theme.colors.textLight};
+  
+  font-size: 19px;
+  font-weight: bold;
+  font-family: sans-serif;
+`;
+
+const SubTitle = styled.span`
+
+  color: ${({theme}) => theme.colors.textLight};
+
+  font-size: 15px;
+  font-family: sans-serif;
+`; 
+
+const Description = styled.p`
+  color: ${({theme}) => theme.colors.textLight};
+
+
+  font-size: 15px;
+  font-family: sans-serif;
+
+  overflow: hidden; 
+  text-overflow: ellipsis; 
+  display: -webkit-box;
+  -webkit-line-clamp: 2; 
+  -webkit-box-orient: vertical; 
+
+`;
+
 export default function Home({ results, error }) {
+
+
   if (error) return <div>An error occured: {error.message}</div>;
 
   return (
@@ -62,9 +110,11 @@ export default function Home({ results, error }) {
               />
             </SectionLeft>
             <SectionRight>
-              <div>{result.title}</div>
-              <div></div>
-              <div>{result.overview}</div>
+              <div>
+                <Title>{result.title}</Title>
+                <SubTitle>{getFormattedDate(result.release_date)}</SubTitle>
+              </div>
+              <Description>{result.overview}</Description>
             </SectionRight>
           </ItemList>
         ))}
@@ -78,7 +128,7 @@ export async function getServerSideProps(context) {
     params: {
       api_key: "786b9a46aa4a85bcb9938a204bbe76a5",
       query: "avengers",
-      language: "en-US",
+      language: "pt-BR",
       page: 1,
       include_adult: false
     }

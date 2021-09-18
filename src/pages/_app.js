@@ -19,8 +19,10 @@ const theme = {
     background: "#f3f3f3",
     textDark: "#828282",
     textLight: "#2d2e23",
+    textInput: '#aaa',
     hover: "#e9e9e9",
-    line: "#b4b8b4"
+    line: "#b4b8b4", 
+    icons: '#939393'
   }
 };
 
