@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import api from "../services/api";
 
 import styled from "styled-components";
@@ -6,7 +7,7 @@ const Container = styled.div`
   width: 100%;
   min-height: 95vh;
 
-  padding: 13px;
+  padding: 0 13px 13px;
 `;
 
 const Lists = styled.ul`
@@ -15,14 +16,12 @@ const Lists = styled.ul`
 `;
 
 const ItemList = styled.li`
-  height: 6rem;
-
-  margin: 12px;
+  margin: 20px;
 
   text-decoration: none;
   list-style: none;
 
-  border-radius: 12px;
+  border-radius: 5px;
   border: 1px solid ${({ theme }) => theme.colors.line};
 
   display: flex;
@@ -34,23 +33,37 @@ const ItemList = styled.li`
 const SectionLeft = styled.div`
   width: 10%;
 
-  background-color: ${({ theme }) => theme.colors.terciary};
 `;
 
 const SectionRight = styled.div`
   width: 90%;
 `;
 
+const ImgPoster = styled(Image)`
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+`;
+
 export default function Home({ results, error }) {
   if (error) return <div>An error occured: {error.message}</div>;
+
   return (
     <Container>
       <Lists>
         {results.map((result) => (
           <ItemList key={result.id}>
-            <SectionLeft></SectionLeft>
+            <SectionLeft>
+              <ImgPoster 
+                alt='Poster Image'
+                src={`https://image.tmdb.org/t/p/w92${result.poster_path}`}
+                width={92}
+                height={143}
+                layout='responsive'
+              />
+            </SectionLeft>
             <SectionRight>
               <div>{result.title}</div>
+              <div></div>
               <div>{result.overview}</div>
             </SectionRight>
           </ItemList>

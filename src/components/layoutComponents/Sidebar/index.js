@@ -4,25 +4,26 @@ import Link from "../../Items/Link";
 
 // Styling component
 const Container = styled.div`
+  position: relative;
+  
   width: 25rem;
   min-height: 80vh;
 
-  padding: 2.2%;
   
-  /* background-color: ${({ theme }) => theme.colors.background}; */
+  /* background-color: ${({ theme }) => theme.colors.terciary}; */
 `;
 const SideContainer = styled.ul`
-  width: 100%;
+  width: 85%;
 
-  margin-top: 3rem;
-  margin-left: 0.7rem;
+  margin-top: 20px;
+  margin-left: 40px;
 
   padding-bottom: 5px;
 
-  border-radius: 10px;
+  border-radius: 5px;
   border: solid 1px ${({ theme }) => theme.colors.line};
 
-  /*background-color: ${({ theme }) => theme.colors.background}; */
+  /* background-color: ${({ theme }) => theme.colors.background}; */
 `;
 const HeadList = styled.div`
   width: 100%;
@@ -30,8 +31,8 @@ const HeadList = styled.div`
   display: flex;
   justify-content: center;
 
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 
   margin-bottom: 5px;
 
@@ -69,37 +70,35 @@ const Text = styled.span`
 // Function Main
 export default function SideBar() {
   return (
-    <>
-      <Container>
-        <SideContainer>
-          <HeadList>
-            <Text>Resultado da busca</Text>
-          </HeadList>
-          <Item>
-            <Link href="#" value={172}>
-              Todos
-            </Link>
-          </Item>
-          <Line />
-          <Item>
-            <Link href="#" value={12}>
-              Filmes
-            </Link>
-          </Item>
-          <Line />
-          <Item>
-            <Link href="#" value={112}>
-              Series
-            </Link>
-          </Item>
-          <Line />
-          <Item>
-            <Link href="#" value={2}>
-              Pessoas
-            </Link>
-          </Item>
-        </SideContainer>
-      </Container>
-    </>
+    <Container>
+      <SideContainer>
+        <HeadList>
+          <Text>Resultado da busca</Text>
+        </HeadList>
+        <Item>
+          <Link href="#" value={172}>
+            Todos
+          </Link>
+        </Item>
+        <Line />
+        <Item>
+          <Link href="#" value={12}>
+            Filmes
+          </Link>
+        </Item>
+        <Line />
+        <Item>
+          <Link href="#" value={112}>
+            Series
+          </Link>
+        </Item>
+        <Line />
+        <Item>
+          <Link href="#" value={2}>
+            Pessoas
+          </Link>
+        </Item>
+      </SideContainer>
+    </Container>
   );
 }
