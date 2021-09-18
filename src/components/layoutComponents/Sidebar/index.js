@@ -13,13 +13,14 @@ const Container = styled.div`
 `;
 const SideContainer = styled.ul`
   width: 100%;
-  height: 20rem;
 
   margin-top: 3rem;
   margin-left: 0.7rem;
 
+  padding-bottom: 5px;
+
   border-radius: 10px;
-  border: solid 1px #b4b8b4;
+  border: solid 1px ${({ theme }) => theme.colors.line};
 
   /*background-color: ${({ theme }) => theme.colors.background}; */
 `;
@@ -32,9 +33,15 @@ const HeadList = styled.div`
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 
+  margin-bottom: 5px;
+
   padding: 19px 15px;
 
   background-color: ${({ theme }) => theme.colors.secondary};
+`;
+
+const Line = styled.hr`
+  color: 1px solid ${({ theme }) => theme.colors.line};
 `;
 
 const Item = styled.li`
@@ -44,8 +51,6 @@ const Item = styled.li`
   justify-content: center;
 
   padding: 5px 30px;
-
-  border-bottom: 1px solid #b4b8b4;
 
   transition: ease-in-out 0.3s;
   &:hover {
@@ -71,18 +76,26 @@ export default function SideBar() {
             <Text>Resultado da busca</Text>
           </HeadList>
           <Item>
+            <Link href="#" value={172}>
+              Todos
+            </Link>
+          </Item>
+          <Line />
+          <Item>
             <Link href="#" value={12}>
               Filmes
             </Link>
           </Item>
+          <Line />
           <Item>
             <Link href="#" value={112}>
               Series
             </Link>
           </Item>
+          <Line />
           <Item>
             <Link href="#" value={2}>
-              Tv
+              Pessoas
             </Link>
           </Item>
         </SideContainer>
