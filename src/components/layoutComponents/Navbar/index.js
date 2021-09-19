@@ -1,5 +1,8 @@
-import styled from "styled-components";
+import Image from "next/image";
 
+import logoMov from "../../../../public/logo-horizontal.png";
+
+import styled from "styled-components";
 
 // Styling component
 const Navbar = styled.div`
@@ -11,7 +14,7 @@ const Navbar = styled.div`
   padding: 1rem;
 
   background-color: ${({ theme }) => theme.colors.primary};
-`
+`;
 const Wrap = styled.div`
   width: 15%;
   height: 2rem;
@@ -21,21 +24,27 @@ const Wrap = styled.div`
   justify-content: center;
 
   /* background-color: ${({ theme }) => theme.colors.background}; */
-`
+`;
 const Text = styled.span`
   font-size: 29px;
   font-family: sans-serif;
-  color: ${({theme}) => theme.colors.textDark}
-`
+  color: ${({ theme }) => theme.colors.textDark};
+`;
 // Function Main
 export default function NavBar() {
-  return(
+  return (
     <>
       <Navbar>
         <Wrap>
-          <Text>MOVBAR</Text>
+          <Image
+            alt="Logo Movdb"
+            src={logoMov}
+            width={140}
+            height={40}
+            layout="intrinsic"
+          />
         </Wrap>
       </Navbar>
     </>
-  )
+  );
 }
