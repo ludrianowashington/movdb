@@ -3,8 +3,6 @@ import Navbar from "./layoutComponents/Navbar";
 import FooterBar from "./layoutComponents/Footer";
 import SideBar from "./layoutComponents/Sidebar";
 
-import SearchBar from "./Items/SearchBar";
-
 // Styling this component
 import styled from "styled-components";
 
@@ -21,7 +19,6 @@ export default function Layout({ children }) {
   return (
     <>
       <Navbar />
-      <SearchBar />
       <Content>
         <SideBar />
         <Main>{children}</Main>
