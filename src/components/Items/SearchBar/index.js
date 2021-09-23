@@ -1,5 +1,9 @@
-import {IoSearch} from 'react-icons/io5'
-import styled from "styled-components"
+import React, { useContext, useState } from "react";
+import {useRouter} from 'next/router'
+
+
+import {IoSearch} from 'react-icons/io5';
+import styled from "styled-components";
 
 const Container = styled.form`
   width: 100%;
@@ -34,10 +38,26 @@ const Search = styled.input`
 `;
 
 export default function SearchBar(){
+  const router = useRouter();
+
+  const [querySearch, setQuerySearch] = useState('');
+
+
+  function handleSearch(e) {
+    e.preventDefault();
+
+    router.push(`/search/?q=${querySearch}`, {shallow: true})
+  }
+  
   return(
-    <Container>
+    <Container onSubmit={handleSearch}>
       <IoSearch size={18} color={({theme}) => theme.colors.icons}/>
-      <Search type='search' placeholder='Buscar por um Filme, Série ou Pessoa'/>
+      <Search 
+          value={querySearch}
+          onChange={(e) => setQuerySearch(e.target.value)}
+          type='search' 
+          placeholder='Buscar por um Filme, Série ou Pessoa'
+        />
     </Container>
   )
 }

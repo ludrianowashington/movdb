@@ -4,6 +4,7 @@ import FooterBar from "./layoutComponents/Footer";
 import SideBar from "./layoutComponents/Sidebar";
 
 import SearchBar from "./Items/SearchBar";
+import { SearchContext } from "../contexts/search";
 
 // Styling this component
 import styled from "styled-components";
@@ -23,8 +24,10 @@ export default function Layout({ children }) {
       <Navbar />
       <SearchBar />
       <Content>
-        <SideBar />
-        <Main>{children}</Main>
+        {/* <SearchContext> */}
+          <SideBar />
+          <Main>{children}</Main>
+        {/* </SearchContext> */}
       </Content>
       <FooterBar />
     </>

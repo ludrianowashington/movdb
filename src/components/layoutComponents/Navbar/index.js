@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import Image from "next/image";
+import logo from '../../../../public/logo-horizontal.png'
 
 // Styling component
 const Navbar = styled.div`
@@ -13,7 +15,7 @@ const Navbar = styled.div`
   background-color: ${({ theme }) => theme.colors.primary};
 `
 const Wrap = styled.div`
-  width: 15%;
+  width: 15rem;
   height: 2rem;
 
   display: flex;
@@ -33,7 +35,13 @@ export default function NavBar() {
     <>
       <Navbar>
         <Wrap>
-          <Text>MOVBAR</Text>
+          <Image 
+            alt='Logo MovDB'
+            src={logo}
+            width={160}
+            height={35}
+            layout='intrinsic'
+          />
         </Wrap>
       </Navbar>
     </>
