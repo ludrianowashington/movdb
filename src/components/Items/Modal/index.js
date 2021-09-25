@@ -1,9 +1,7 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
-
-
-export default function Modal(){
-  return(
+export default function Modal() {
+  return (
     <Overlay>
       <ModalView>
         <SectionLeft>
@@ -14,10 +12,11 @@ export default function Modal(){
           <Genres>Action, Adventures, Fiction</Genres>
           <ReleaseDate>25/11/2018/</ReleaseDate>
           <VoteAverage>4.7</VoteAverage>
-          <Description>asdfiua asçlinasdf açsidf asdf nsapgrçlksd vnr </Description>
-
+          <Description>
+            asdfiua asçlinasdf açsidf asdf nsapgrçlksd vnr{" "}
+          </Description>
         </SectionRight>
       </ModalView>
     </Overlay>
-  )
+  );
 }
