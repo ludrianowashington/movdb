@@ -3,12 +3,8 @@ import Navbar from "./layoutComponents/Navbar";
 import FooterBar from "./layoutComponents/Footer";
 import SideBar from "./layoutComponents/Sidebar";
 
-<<<<<<< HEAD
 import SearchBar from "./Items/SearchBar";
 import { SearchContext } from "../contexts/search";
-=======
-import SearchBar from "./Items/SeachBar";
->>>>>>> 737e667ccf31c2bf4834d10967d537865fc40642
 
 // Styling this component
 import styled from "styled-components";
