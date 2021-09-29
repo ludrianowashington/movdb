@@ -3,8 +3,7 @@ import Navbar from "./layoutComponents/Navbar";
 import FooterBar from "./layoutComponents/Footer";
 import SideBar from "./layoutComponents/Sidebar";
 
-import SearchBar from "./Items/SearchBar";
-import { SearchContext } from "../contexts/search";
+import SearchBar from "./Items/SeachBar";
 
 // Styling this component
 import styled from "styled-components";
@@ -24,10 +23,8 @@ export default function Layout({ children }) {
       <Navbar />
       <SearchBar />
       <Content>
-        {/* <SearchContext> */}
-          <SideBar />
-          <Main>{children}</Main>
-        {/* </SearchContext> */}
+        <SideBar />
+        <Main>{children}</Main>
       </Content>
       <FooterBar />
     </>
