@@ -1,3 +1,4 @@
+import { SearchProvider } from "../contexts/search";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 
 // Importing component
@@ -19,10 +20,10 @@ const theme = {
     background: "#f3f3f3",
     textDark: "#828282",
     textLight: "#2d2e23",
-    textInput: '#aaa',
+    textInput: "#aaa",
     hover: "#e9e9e9",
-    line: "#b4b8b4", 
-    icons: '#939393'
+    line: "#b4b8b4",
+    icons: "#939393"
   }
 };
 
@@ -31,9 +32,11 @@ export default function App({ Component, pageProps }) {
     <>
       <GlobalStyle />
       <ThemeProvider theme={theme}>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
+        <SearchProvider>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </SearchProvider>
       </ThemeProvider>
     </>
   );

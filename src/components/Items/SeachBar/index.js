@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import { IoSearch } from "react-icons/io5";
 import styled from "styled-components";
 
@@ -27,8 +28,15 @@ const Search = styled.input`
 `;
 
 export default function SearchBar() {
+  const router = useRouter();
+
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    router.push("/search");
+  }
   return (
-    <Container>
+    <Container onSubmit={handleSubmit}>
       <IoSearch size={18} color={({ theme }) => theme.colors.icons} />
       <Search
         type="search"
