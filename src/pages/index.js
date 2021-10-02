@@ -1,8 +1,3 @@
-import { useContext, useState } from "react";
-import { SearchProvider } from "../contexts/search";
-
-import Image from "next/image";
-
 import styled from "styled-components";
 
 const Container = styled.div`

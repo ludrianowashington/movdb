@@ -1,96 +1,37 @@
 import { useContext, useState } from "react";
-import { SearchProvider } from "../../contexts/search";
-
-import useSwr from "swr";
-import Link from "next/link";
-
-import { getFormattedDate } from "../../utils/formatDate";
-
-import api from "../../services/api";
-
-import Image from "next/image";
-
-import styled from "styled-components";
 import { useRouter } from "next/router";
 
-const Container = styled.div`
-  width: 100%;
-  min-height: 95vh;
-  padding: 0 13px 13px;
-`;
+import {
+  Container, 
+  Lists, 
+  ItemList, 
+  SectionLeft, 
+  SectionRight, 
+  ImgPoster, 
+  Title, 
+  SubTitle, 
+  Description
+} from './styles'
 
-const Lists = styled.ul`
-  width: 100%;
-  height: 100%;
-`;
+// import useSwr from "swr";
 
-const ItemList = styled.li`
-  max-width: 95%;
-  margin: 20px;
-  text-decoration: none;
-  list-style: none;
-  border-radius: 5px;
-  border: 1px solid ${({ theme }) => theme.colors.line};
-  display: flex;
-  flex-direction: "row";
-  background-color: ${({ theme }) => theme.colors.background};
-`;
+import { SearchContext } from "../../contexts/search";
 
-const SectionLeft = styled.div`
-  width: 10%;
-`;
-
-const SectionRight = styled.div`
-  width: 90%;
-  padding: 15px 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  text-align: left;
-`;
-
-const ImgPoster = styled(Image)`
-  border-bottom-left-radius: 5px;
-  border-top-left-radius: 5px;
-`;
-
-const Title = styled.h2`
-  color: ${({ theme }) => theme.colors.textLight};
-
-  font-size: 19px;
-  font-weight: bold;
-  font-family: sans-serif;
-`;
-
-const SubTitle = styled.span`
-  color: ${({ theme }) => theme.colors.textLight};
-  font-size: 15px;
-  font-family: sans-serif;
-`;
-
-const Description = styled.p`
-  color: ${({ theme }) => theme.colors.textLight};
-  font-size: 15px;
-  font-family: sans-serif;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-`;
+import { getFormattedDate } from "../../utils/formatDate";
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
 export default function SearchMulti() {
   const router = useRouter();
-  const { data, error } = useSwr(
-    router.query.q ? `/api/search/${router.query.q}` : null
-  );
+  const {searchResult} = useContext(SearchContext);
+  
+  console.log(searchResult);
 
   return (
     <Container>
       <Lists>
-        {data.map((result) => (
+        <h1>Search : {searchResult}</h1>
+        {/* {data.map((result) => (
           <ItemList key={result.id}>
             <SectionLeft>
               <ImgPoster
@@ -109,7 +50,7 @@ export default function SearchMulti() {
               <Description>{result.overview}</Description>
             </SectionRight>
           </ItemList>
-        ))}
+        ))} */}
       </Lists>
     </Container>
   );
