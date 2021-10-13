@@ -2,16 +2,16 @@ import { useContext, useState } from "react";
 import { useRouter } from "next/router";
 
 import {
-  Container, 
-  Lists, 
-  ItemList, 
-  SectionLeft, 
-  SectionRight, 
-  ImgPoster, 
-  Title, 
-  SubTitle, 
+  Container,
+  Lists,
+  ItemList,
+  SectionLeft,
+  SectionRight,
+  ImgPoster,
+  Title,
+  SubTitle,
   Description
-} from './styles'
+} from "./styles";
 
 // import useSwr from "swr";
 
@@ -23,14 +23,14 @@ const fetcher = (url) => fetch(url).then((res) => res.json());
 
 export default function SearchMulti() {
   const router = useRouter();
-  const {searchResult} = useContext(SearchContext);
-  
-  console.log(searchResult);
+  const { searchResult } = useContext(SearchContext);
+
+  //console.log(searchResult);
 
   return (
     <Container>
       <Lists>
-        <h1>Search : {searchResult}</h1>
+        <h1>Search </h1>
         {/* {data.map((result) => (
           <ItemList key={result.id}>
             <SectionLeft>

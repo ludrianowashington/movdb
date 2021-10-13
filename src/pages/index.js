@@ -7,7 +7,5 @@ const Container = styled.div`
 `;
 
 export default function Home() {
-  // if (error) return <div>An error occured: {error.message}</div>
-
   return <Container></Container>;
 }
