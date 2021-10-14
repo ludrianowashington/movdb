@@ -1,3 +1,5 @@
+import { IoSearch } from "react-icons/io5";
+
 import styled from "styled-components";
 
 const Container = styled.form`
@@ -24,4 +26,9 @@ const Search = styled.input`
   }
 `;
 
-export { Container, Search };
+const Icon = styled(IoSearch)`
+  font-size: 18px;
+  color: ${({ theme }) => theme.colors.icons};
+`;
+
+export { Container, Search, Icon };

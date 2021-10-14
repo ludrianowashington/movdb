@@ -1,12 +1,12 @@
 import { useContext, useState } from "react";
 import { useRouter } from "next/router";
-import { IoSearch } from "react-icons/io5";
 
 import { SearchContext } from "../../../contexts/search";
 
 import {
   Container, 
-  Search
+  Search, 
+  Icon
 } from './styles'
 
 export default function SearchBar() {
@@ -25,7 +25,7 @@ export default function SearchBar() {
   }
   return (
     <Container onSubmit={handleSubmit}>
-      <IoSearch size={18} color={({ theme }) => theme.colors.icons} />
+      <Icon />
       <Search
         value={searchInput}
         onChange={(e) => setSearchInput(e.target.value)}

@@ -18,13 +18,13 @@ import {
 import { SearchContext } from "../../contexts/search";
 
 import { getFormattedDate } from "../../utils/formatDate";
-import { useTheme } from "styled-components";
+// import { useTheme } from "styled-components";
 
 //const fetcher = (url) => fetch(url).then((res) => res.json());
 
 export default function SearchMulti() {
   const { results } = useContext(SearchContext);
-  const theme = useTheme();
+  
 
   function showMediaType(type, result){
     const isOverview = result.overview;
