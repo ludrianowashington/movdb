@@ -18,9 +18,10 @@ export default function SearchBar() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    
+
     search(searchInput)
-    router.push("/search");
+    setSearchInput('');
+    router.push("/search", `/search?query=${searchInput}`, {shallow: true});
   }
   return (
     <Container onSubmit={handleSubmit}>
