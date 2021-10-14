@@ -1,18 +1,18 @@
 import Image from "next/image";
 import styled from "styled-components";
 
-const Container = styled.div`
+export const Container = styled.div`
   width: 100%;
   min-height: 95vh;
   padding: 0 13px 13px;
 `;
 
-const Lists = styled.ul`
+export const Lists = styled.ul`
   width: 100%;
   height: 100%;
 `;
 
-const ItemList = styled.li`
+export const ItemList = styled.li`
   max-width: 95%;
   margin: 20px;
   text-decoration: none;
@@ -24,11 +24,11 @@ const ItemList = styled.li`
   background-color: ${({ theme }) => theme.colors.background};
 `;
 
-const SectionLeft = styled.div`
+export const SectionLeft = styled.div`
   width: 10%;
 `;
 
-const SectionRight = styled.div`
+export const SectionRight = styled.div`
   width: 90%;
   padding: 15px 20px;
   display: flex;
@@ -37,25 +37,25 @@ const SectionRight = styled.div`
   text-align: left;
 `;
 
-const ImgPoster = styled(Image)`
+export const ImgPoster = styled(Image)`
   border-bottom-left-radius: 5px;
   border-top-left-radius: 5px;
 `;
 
-const Title = styled.h2`
+export const Title = styled.h2`
   color: ${({ theme }) => theme.colors.textLight};
   font-size: 19px;
   font-weight: bold;
   font-family: sans-serif;
 `;
 
-const SubTitle = styled.span`
+export const SubTitle = styled.span`
   color: ${({ theme }) => theme.colors.textLight};
   font-size: 15px;
   font-family: sans-serif;
 `;
 
-const Description = styled.p`
+export const Description = styled.p`
   color: ${({ theme }) => theme.colors.textLight};
   font-size: 15px;
   font-family: sans-serif;
@@ -65,15 +65,3 @@ const Description = styled.p`
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
 `;
-
-export {
-  Container,
-  Lists,
-  ItemList,
-  SectionLeft,
-  SectionRight,
-  ImgPoster,
-  Title,
-  SubTitle,
-  Description
-};
