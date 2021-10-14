@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 const Container = styled.form`
   width: 100%;
-
   padding: 5px 50px;
   display: flex;
   flex-direction: row;
@@ -25,4 +24,4 @@ const Search = styled.input`
   }
 `;
 
-export {Container, Search}
+export { Container, Search };

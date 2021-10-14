@@ -44,7 +44,6 @@ const ImgPoster = styled(Image)`
 
 const Title = styled.h2`
   color: ${({ theme }) => theme.colors.textLight};
-
   font-size: 19px;
   font-weight: bold;
   font-family: sans-serif;
@@ -68,13 +67,13 @@ const Description = styled.p`
 `;
 
 export {
-  Container, 
-  Lists, 
-  ItemList, 
-  SectionLeft, 
-  SectionRight, 
-  ImgPoster, 
-  Title, 
-  SubTitle, 
+  Container,
+  Lists,
+  ItemList,
+  SectionLeft,
+  SectionRight,
+  ImgPoster,
+  Title,
+  SubTitle,
   Description
-}
+};

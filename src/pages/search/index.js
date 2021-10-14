@@ -19,13 +19,13 @@ import { SearchContext } from "../../contexts/search";
 
 import { getFormattedDate } from "../../utils/formatDate";
 
-const fetcher = (url) => fetch(url).then((res) => res.json());
+//const fetcher = (url) => fetch(url).then((res) => res.json());
 
 export default function SearchMulti() {
   const router = useRouter();
   const { searchResult } = useContext(SearchContext);
 
-  //console.log(searchResult);
+  console.log(searchResult);
 
   return (
     <Container>
