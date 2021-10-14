@@ -23,15 +23,48 @@ import { getFormattedDate } from "../../utils/formatDate";
 
 export default function SearchMulti() {
   const router = useRouter();
-  const { searchResult } = useContext(SearchContext);
+  const { results } = useContext(SearchContext);
 
-  console.log(searchResult);
-
+  function showMediaType(type, result){
+    if (type === 'movie'){
+      return (
+        <>
+          <div>
+            <Title>{result.title}</Title>
+            <SubTitle>{getFormattedDate(result.release_date)}</SubTitle>
+          </div>
+          <Description>{result.overview}</Description>
+        </>
+      )
+    } else if (type === "tv") {
+      return (
+        <>
+          <div>
+            <Title>{result.name}</Title>
+            <SubTitle>{getFormattedDate(result.release_date)}</SubTitle>
+          </div>
+          <Description>{result.overview}</Description>
+        </>
+      )
+    } else if (type === "person") {
+      return (
+        <>
+          <div>
+            <Title>{result.title}</Title>
+            <SubTitle>{getFormattedDate(result.release_date)}</SubTitle>
+          </div>
+          <Description>{result.overview}</Description>
+        </>
+      )
+    }
+  }
+  
+  console.log(results)
   return (
     <Container>
       <Lists>
         <h1>Search </h1>
-        {/* {data.map((result) => (
+        {results.map((result) => (
           <ItemList key={result.id}>
             <SectionLeft>
               <ImgPoster
@@ -43,14 +76,10 @@ export default function SearchMulti() {
               />
             </SectionLeft>
             <SectionRight>
-              <div>
-                <Title>{result.title}</Title>
-                <SubTitle>{getFormattedDate(result.release_date)}</SubTitle>
-              </div>
-              <Description>{result.overview}</Description>
+              {showMediaType(result.media_type, result)}
             </SectionRight>
           </ItemList>
-        ))} */}
+        ))}
       </Lists>
     </Container>
   );
