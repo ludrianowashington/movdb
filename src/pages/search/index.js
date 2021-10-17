@@ -1,6 +1,10 @@
 import { useContext, useState } from "react";
 // import { useRouter } from "next/router";
 
+import { SearchContext } from "../../contexts/search";
+
+import { getFormattedDate } from "../../utils/formatDate";
+
 import Image from "next/image";
 import styled from "styled-components";
 
@@ -69,24 +73,13 @@ const Description = styled.p`
   -webkit-box-orient: vertical;
 `;
 
-
-// import useSwr from "swr";
-
-import { SearchContext } from "../../contexts/search";
-
-import { getFormattedDate } from "../../utils/formatDate";
-// import { useTheme } from "styled-components";
-
-//const fetcher = (url) => fetch(url).then((res) => res.json());
-
 export default function SearchMulti() {
   const { results } = useContext(SearchContext);
-  
 
-  function showMediaType(type, result){
+  function showMediaType(type, result) {
     const isOverview = result.overview;
-    
-    if (type === 'movie'){
+
+    if (type === "movie") {
       return (
         <>
           <div>
@@ -95,7 +88,7 @@ export default function SearchMulti() {
           </div>
           {isOverview && <Description>{result.overview}</Description>}
         </>
-      )
+      );
     } else if (type === "tv") {
       return (
         <>
@@ -105,7 +98,7 @@ export default function SearchMulti() {
           </div>
           {isOverview && <Description>{result.overview}</Description>}
         </>
-      )
+      );
     } else if (type === "person") {
       return (
         <>
@@ -114,33 +107,32 @@ export default function SearchMulti() {
             <SubTitle>{getFormattedDate(result.release_date)}</SubTitle>
           </div>
         </>
-      )
+      );
     }
   }
-  
-  
-  
+
   return (
     <Container>
       <Lists>
         {results.map((result) => (
           <ItemList key={result.id}>
             <SectionLeft>
-              {!result.poster_path ?
-                (<ImgPoster
+              {!result.poster_path ? (
+                <ImgPoster
                   src={`https://fakeimg.pl/92x143/0d253f/aaa?font_size=28&text=MovDB&font=yanone`}
                   width={92}
                   height={143}
                   layout="responsive"
                 />
-              ) : (<ImgPoster
-                alt="Poster Image"
-                src={`https://image.tmdb.org/t/p/w92${result.poster_path}`}
-                width={92}
-                height={143}
-                layout="responsive"
-              />)
-              }
+              ) : (
+                <ImgPoster
+                  alt="Poster Image"
+                  src={`https://image.tmdb.org/t/p/w92${result.poster_path}`}
+                  width={92}
+                  height={143}
+                  layout="responsive"
+                />
+              )}
             </SectionLeft>
             <SectionRight>
               {showMediaType(result.media_type, result)}
